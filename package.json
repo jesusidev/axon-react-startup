@@ -1,0 +1,43 @@
+{
+  "name": "axon-react-startup",
+  "version": "1.0.0",
+  "description": "Axon Bridge React Startup Framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gdevtech/axon-react-startup.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Jesus Guzman (gdevtech)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gdevtech/axon-react-startup/issues"
+  },
+  "homepage": "https://github.com/gdevtech/axon-react-startup#readme",
+  "dependencies": {
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-react": "^7.8.3",
+    "@types/react": "^16.9.23",
+    "@types/react-dom": "^16.9.5",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "file-loader": "^5.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
