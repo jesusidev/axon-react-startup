@@ -4,7 +4,11 @@
   "description": "Axon Bridge React Startup Framework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --env dev",
+    "staging": "webpack --env staging",
+    "prod": "webpack --env prod",
+    "analyze": "webpack-bundle-analyzer --port 4200 public/stats.json"
   },
   "repository": {
     "type": "git",
@@ -30,14 +34,22 @@
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
     "babel-loader": "^8.0.6",
+    "chalk": "^3.0.0",
     "clean-webpack-plugin": "^3.0.0",
+    "dotenv-webpack": "^1.7.0",
+    "eslint": "^6.8.0",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-import": "^2.20.1",
     "file-loader": "^5.1.0",
+    "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "source-map-loader": "^0.2.4",
     "ts-loader": "^6.2.1",
     "typescript": "^3.8.3",
     "webpack": "^4.42.0",
+    "webpack-bundle-analyzer": "^3.6.1",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.10.3",
+    "webpack-merge": "^4.2.2"
   }
 }
