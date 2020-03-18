@@ -19,7 +19,8 @@ module.exports = {
         react: {
           test: /[\\/]node_modules[\\/]((react|react-dom).*)[\\/]/,
           name: 'react',
-          chunks: 'all'
+          chunks: 'all',
+          reuseExistingChunk: true
         }
       }
     }
@@ -56,9 +57,14 @@ module.exports = {
         ]
       },
       {
-        test: /\.(ts|js)x?$/,
-        exclude: /node_modules/,
-        use: ['babel-loader']
+        test: /\.js(x?)$/,
+        exclude: ['/node_modules/'],
+        use: ['babel-loader', 'eslint-loader']
+      },
+      {
+        test: /\.ts(x?)$/,
+        exclude: ['/node_modules/'],
+        use: ['babel-loader', 'eslint-loader']
       }
     ]
   }

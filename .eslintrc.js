@@ -5,6 +5,15 @@ module.exports = {
     jest: true,
     es6: true
   },
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true
+    },
+    ecmaVersion: 2020,
+    sourceType: 'module',
+    project: './tsconfig.json',
+    tsconfigRootDir: __dirname
+  },
   plugins: ['@typescript-eslint', 'react', 'react-hooks', 'import', 'autofix'],
   extends: [
     'airbnb-typescript',
@@ -16,15 +25,6 @@ module.exports = {
     'plugin:prettier/recommended',
     'prettier/react'
   ],
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true
-    },
-    ecmaVersion: 2020,
-    sourceType: 'module',
-    project: './tsconfig.json',
-    tsconfigRootDir: __dirname
-  },
   rules: {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',

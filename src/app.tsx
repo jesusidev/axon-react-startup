@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Button from './components/button';
+import Button from './components/button/button';
 
 const App: React.FC = () => {
   const [name, setName] = React.useState<string | null>('');
@@ -19,7 +19,7 @@ const App: React.FC = () => {
       <h1>{`Hello my Name is ${name}`}</h1>
       <input type="text" onChange={(e) => setName(e.target.value)} />
       <Button disabled={isLoading} onClick={onButtonClick}>
-        {isLoading ? 'Loading...' : 'Update'}
+        {isLoading ? 'Loading...' : 'Click for balloons'}
       </Button>
     </div>
   );
