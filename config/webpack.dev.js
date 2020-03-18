@@ -3,6 +3,7 @@ const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const Dotenv = require('dotenv-webpack');
+const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 
 const commonConfig = require('./webpack.common');
 
@@ -23,8 +24,13 @@ module.exports = merge(commonConfig, {
     inline: true,
     historyApiFallback: true
   },
-
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
   plugins: [
+    new ErrorOverlayPlugin(),
     new Dotenv({
       path: path.resolve(__dirname, '../.env.dev'),
       systemvars: true
