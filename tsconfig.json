@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./public/",
+    "noEmit": true, // Do not emit output (meaning do not compile code, only perform type checking)
     "sourceMap": true, //Generates corresponding .map file.
     "noImplicitAny": true, //Raise error on expressions and declarations with an implied any type.
     "module": "commonjs", // Specify module code generation
@@ -25,6 +25,6 @@
     "src/**/*.ts",
     "src/**/*.tsx"
   ],
-  "exclude": ["node_modules", "build", "test", "src/**/*.spec.ts", "src/**/*.test.ts"] // *** The files to not type check ***
+  "exclude": ["./node_modules", "./build"] // *** The files to not type check ***
 }
 

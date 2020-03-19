@@ -1,25 +1,11 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import Button from '../button';
 
-const defaultProps = {
-  disabled: false,
-  onClick: () => {
-    // eslint-disable-next-line no-console
-    console.log('It works');
-  }
-};
+describe('Button Component', () => {
+  test('Loading Button Message', () => {
+    const { queryByText } = render(<Button disabled>Loading...</Button>);
 
-const { disabled, onClick } = defaultProps;
-
-describe('First Test Button', () => {
-  it('renders without crashing', () => {
-    const wrapper = shallow(
-      <Button disabled={disabled} onClick={onClick}>
-        Hello Button
-      </Button>
-    );
-    const appComponent = wrapper.find('button');
-    expect(appComponent.length).toBe(1);
+    expect(queryByText('Loading...')).toBeTruthy();
   });
 });
