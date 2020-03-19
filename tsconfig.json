@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./public/",
+    "noEmit": true, // Do not emit output (meaning do not compile code, only perform type checking)
     "sourceMap": true, //Generates corresponding .map file.
     "noImplicitAny": true, //Raise error on expressions and declarations with an implied any type.
     "module": "commonjs", // Specify module code generation
@@ -15,7 +15,6 @@
     "forceConsistentCasingInFileNames": true, // Disallow inconsistently-cased references to the same file.
     "moduleResolution": "node", // Resolve modules using Node.js style
     "resolveJsonModule": true, // Include modules imported with .json extension
-    "noEmit": true, // Do not emit output (meaning do not compile code, only perform type checking)
     "declaration": true, // Generate corresponding .d.ts file
     "noUnusedLocals": true, // Report errors on unused locals
     "noUnusedParameters": true, // Report errors on unused parameters
@@ -23,8 +22,9 @@
     "noFallthroughCasesInSwitch": true // Report errors for fallthrough cases in switch statement
   },
   "include": [
-    "src/**/*" // *** The files TypeScript should type check ***
+    "src/**/*.ts",
+    "src/**/*.tsx"
   ],
-  "exclude": ["node_modules", "build"] // *** The files to not type check ***
+  "exclude": ["./node_modules", "./build"] // *** The files to not type check ***
 }
 

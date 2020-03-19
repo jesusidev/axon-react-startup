@@ -1,11 +1,35 @@
+const fs = require('fs');
+const path = require('path');
+
+const prettierOptions = JSON.parse(
+  fs.readFileSync(path.resolve(__dirname, '.prettierrc'), 'utf8')
+);
 module.exports = {
   parser: '@typescript-eslint/parser',
   env: {
-    browser: true,
     jest: true,
+    browser: true,
+    node: true,
     es6: true
   },
-  plugins: ['@typescript-eslint', 'react', 'react-hooks', 'import', 'autofix'],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true
+    },
+    ecmaVersion: 2020,
+    sourceType: 'module',
+    project: './tsconfig.json',
+    tsconfigRootDir: __dirname
+  },
+  plugins: [
+    '@typescript-eslint',
+    'react',
+    'react-hooks',
+    'import',
+    'autofix',
+    'prettier',
+    'jsx-a11y'
+  ],
   extends: [
     'airbnb-typescript',
     'airbnb/hooks',
@@ -16,15 +40,6 @@ module.exports = {
     'plugin:prettier/recommended',
     'prettier/react'
   ],
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true
-    },
-    ecmaVersion: 2020,
-    sourceType: 'module',
-    project: './tsconfig.json',
-    tsconfigRootDir: __dirname
-  },
   rules: {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
@@ -53,7 +68,7 @@ module.exports = {
         accessibility: 'no-public'
       }
     ],
-    'prettier/prettier': ['warn']
+    'prettier/prettier': ['error', prettierOptions]
   },
   settings: {
     react: {

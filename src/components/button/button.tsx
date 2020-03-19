@@ -1,17 +1,18 @@
 import React from 'react';
+import ButtonBase from './button.style';
 
 interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   disabled: boolean;
-  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const Button: React.FC<IButtonProps> = (props: IButtonProps) => {
   const { children, disabled, onClick } = props;
   return (
-    <button type="button" disabled={disabled} onClick={onClick}>
+    <ButtonBase type="button" disabled={disabled} onClick={onClick}>
       {children}
-    </button>
+    </ButtonBase>
   );
 };
 
