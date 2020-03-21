@@ -9,7 +9,7 @@ module.exports = (env) => {
       console.log(chalkProcessing('=  Axon Bridge Production Build  ='));
       console.log(chalkProcessing('==================================\n'));
       console.log(
-        chalkProcessing(`🎬  ${env} build started, Please wait...\n`),
+        chalkProcessing(`🎬  ${env} build started, Please wait...\n`)
       );
       console.log(chalkProcessing('===============================\n\n'));
       return require('./config/webpack.prod');
@@ -19,9 +19,7 @@ module.exports = (env) => {
       console.log(chalkProcessing('==============================='));
       console.log(chalkProcessing('=  Axon Bridge Staging Build  ='));
       console.log(chalkProcessing('===============================\n'));
-      console.log(
-        chalkProcessing(`📽  ${env} build started, Please wait...\n`),
-      );
+      console.log(chalkProcessing(`📽  ${env} build started, Please wait...\n`));
       console.log(chalkProcessing('===============================\n\n'));
       return require('./config/webpack.staging');
       break;
@@ -32,7 +30,7 @@ module.exports = (env) => {
       console.log(chalkProcessing('=  Axon Bridge Development Build  ='));
       console.log(chalkProcessing('===================================\n'));
       console.log(
-        chalkProcessing(`🎨  ${env} build started, Please wait...\n`),
+        chalkProcessing(`🎨  ${env} build started, Please wait...\n`)
       );
       console.log(chalkProcessing('===============================\n\n'));
       return require('./config/webpack.dev');
