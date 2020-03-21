@@ -3,7 +3,7 @@
 # This is a generated file and will be overwritten
 
 @app
-create-0zh
+air-dhd
 
 @static
 
