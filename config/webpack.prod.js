@@ -18,7 +18,7 @@ module.exports = merge(commonConfig, {
 
   output: {
     path: path.resolve(__dirname, '../public/'),
-    filename: '[name].[chunkhash:4].js'
+    filename: '[name].[chunkhash:4].js',
   },
 
   optimization: {
@@ -26,21 +26,16 @@ module.exports = merge(commonConfig, {
     minimizer: [
       new TerserPlugin({
         terserOptions: {
-          warnings: false,
           compress: {
-            comparisons: false
+            comparisons: false,
           },
-          parse: {},
-          mangle: true,
           output: {
             comments: false,
-            ascii_only: true
-          }
+            ascii_only: true,
+          },
         },
-        parallel: true,
-        cache: true,
-        sourceMap: true
-      })
+        sourceMap: true,
+      }),
     ],
     nodeEnv: 'production',
     sideEffects: true,
@@ -55,22 +50,22 @@ module.exports = merge(commonConfig, {
           test: /[\\/]node_modules[\\/]((?!react|react-dom).*)[\\/]/,
           name: 'vendors',
           chunks: 'all',
-          reuseExistingChunk: true
+          reuseExistingChunk: true,
         },
         react: {
           test: /[\\/]node_modules[\\/]((react|react-dom).*)[\\/]/,
           name: 'react',
           chunks: 'all',
-          reuseExistingChunk: true
-        }
-      }
-    }
+          reuseExistingChunk: true,
+        },
+      },
+    },
   },
 
   plugins: [
     new Dotenv({
       path: path.join(__dirname, '../.env.prod'),
-      systemvars: true
+      systemvars: true,
     }),
     new CleanWebpackPlugin(),
     new webpack.HashedModuleIdsPlugin(),
@@ -78,8 +73,8 @@ module.exports = merge(commonConfig, {
       analyzerMode: 'disabled',
       generateStatsFile: true,
       statsOptions: {
-        source: false
-      }
+        source: false,
+      },
     }),
     new HtmlWebPackPlugin({
       template: './src/index.html',
@@ -92,16 +87,16 @@ module.exports = merge(commonConfig, {
         removeStyleLinkTypeAttributes: true,
         keepClosingSlash: true,
         minifyJS: true,
-        minifyCSS: true
+        minifyCSS: true,
       },
-      inject: 'body'
+      inject: 'body',
     }),
     new CompressionPlugin({
       algorithm: 'gzip',
       test: /\.js$|\.css$|\.html$/,
       threshold: 10240,
-      minRatio: 0.8
-    })
+      minRatio: 0.8,
+    }),
   ],
 
   module: {
@@ -113,12 +108,10 @@ module.exports = merge(commonConfig, {
             loader: 'html-loader',
             options: {
               minimize: false,
-              removeComment: true,
-              collapseWhitespace: false
-            }
-          }
-        ]
-      }
-    ]
-  }
+            },
+          },
+        ],
+      },
+    ],
+  },
 });

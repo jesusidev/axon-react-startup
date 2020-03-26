@@ -13,27 +13,30 @@ module.exports = merge(commonConfig, {
 
   output: {
     path: path.resolve(__dirname, '../public/'),
-    filename: '[name].[hash:4].js'
+    filename: '[name].[hash:4].js',
   },
 
   devServer: {
     port: 8080,
+    overlay: true,
     compress: true,
     open: true,
     hot: true,
     inline: true,
-    historyApiFallback: true
+    historyApiFallback: true,
+    clientLogLevel: 'silent',
+    noInfo: true,
   },
   optimization: {
     splitChunks: {
-      chunks: 'all'
-    }
+      chunks: 'all',
+    },
   },
   plugins: [
     new ErrorOverlayPlugin(),
     new Dotenv({
       path: path.resolve(__dirname, '../.env.dev'),
-      systemvars: true
+      systemvars: true,
     }),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebPackPlugin({
@@ -41,9 +44,9 @@ module.exports = merge(commonConfig, {
       file: 'index.html',
       minify: {
         removeComments: true,
-        collapseWhitespace: true
+        collapseWhitespace: true,
       },
-      inject: 'body'
-    })
-  ]
+      inject: 'body',
+    }),
+  ],
 });

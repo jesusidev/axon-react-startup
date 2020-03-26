@@ -41,6 +41,7 @@ module.exports = {
     'prettier/react'
   ],
   rules: {
+    'autofix/no-debugger': 'error',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'autofix/no-debugger': 'error',
