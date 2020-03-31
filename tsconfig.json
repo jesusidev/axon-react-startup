@@ -22,6 +22,6 @@
     "experimentalDecorators": true, // Enables experimental support for ES decorators
     "noFallthroughCasesInSwitch": true // Report errors for fallthrough cases in switch statement
   },
-  "include": ["src/**/*"],
+  "include": ["./src/**/*"],
   "exclude": ["./node_modules", "./build"] // *** The files to not type check ***
 }

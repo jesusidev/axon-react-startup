@@ -88,13 +88,17 @@ module.exports = {
             loader: 'ts-loader',
             options: {
               transpileOnly: true,
-              logLevel: 'info',
               getCustomTransformers: () => ({
                 before: [styledComponentsTransformer],
               }),
             },
           },
         ],
+      },
+      {
+        test: /\.js(x?)$/,
+        loader: 'source-map-loader',
+        enforce: 'pre',
       },
       {
         test: /\.svg$/,

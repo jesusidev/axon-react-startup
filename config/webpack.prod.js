@@ -37,15 +37,11 @@ module.exports = merge(commonConfig, {
         sourceMap: true,
       }),
     ],
-    nodeEnv: 'production',
-    sideEffects: true,
-    concatenateModules: true,
     runtimeChunk: 'single',
     splitChunks: {
       chunks: 'all',
-      maxInitialRequests: 10,
-      minSize: 0,
       cacheGroups: {
+        default: false,
         vendor: {
           test: /[\\/]node_modules[\\/]((?!react|react-dom).*)[\\/]/,
           name: 'vendors',
@@ -56,7 +52,6 @@ module.exports = merge(commonConfig, {
           test: /[\\/]node_modules[\\/]((react|react-dom).*)[\\/]/,
           name: 'react',
           chunks: 'all',
-          reuseExistingChunk: true,
         },
       },
     },
