@@ -10,16 +10,16 @@ module.exports = {
     jest: true,
     browser: true,
     node: true,
-    es6: true
+    es6: true,
   },
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
     ecmaVersion: 2020,
     sourceType: 'module',
     project: './tsconfig.json',
-    tsconfigRootDir: __dirname
+    tsconfigRootDir: __dirname,
   },
   plugins: [
     '@typescript-eslint',
@@ -28,7 +28,7 @@ module.exports = {
     'import',
     'autofix',
     'prettier',
-    'jsx-a11y'
+    'jsx-a11y',
   ],
   extends: [
     'airbnb-typescript',
@@ -38,13 +38,12 @@ module.exports = {
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'prettier/@typescript-eslint',
     'plugin:prettier/recommended',
-    'prettier/react'
+    'prettier/react',
   ],
   rules: {
     'autofix/no-debugger': 'error',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
-    'autofix/no-debugger': 'error',
     'sort-imports': 'off',
     quotes: ['error', 'single'],
     'no-process-env': ['warn'],
@@ -55,8 +54,8 @@ module.exports = {
       'warn',
       {
         allowExpressions: true,
-        allowTypedFunctionExpressions: true
-      }
+        allowTypedFunctionExpressions: true,
+      },
     ],
     '@typescript-eslint/await-thenable': ['warn'],
     '@typescript-eslint/no-require-imports': ['warn'],
@@ -66,20 +65,20 @@ module.exports = {
     '@typescript-eslint/explicit-member-accessibility': [
       'warn',
       {
-        accessibility: 'no-public'
-      }
+        accessibility: 'no-public',
+      },
     ],
-    'prettier/prettier': ['error', prettierOptions]
+    'prettier/prettier': ['error', prettierOptions],
   },
   settings: {
     react: {
-      version: 'detect'
+      version: 'detect',
     },
     'import/resolver': {
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
-        moduleDirectory: ['node_modules', 'src/']
-      }
-    }
-  }
+        moduleDirectory: ['node_modules', 'src/'],
+      },
+    },
+  },
 };

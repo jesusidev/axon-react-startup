@@ -2,11 +2,11 @@
   "name": "axon-react-startup",
   "version": "1.3.0",
   "description": "Axon Bridge React Startup Framework",
-  "main": "index.js",
+  "main": "index.tsx",
   "scripts": {
-    "prestart": "npm-run-all --parallel remove-public",
-    "start": "npm-run-all --parallel test:watch dev lint:watch",
-    "build": "npm-run-all --parallel lint:fix prod",
+    "prestart": "npm-run-all --silent -p remove:coverage remove:public",
+    "start": "npm-run-all --silent -p lint:fix test:watch dev lint:watch format:watch eslint:watch",
+    "build": "npm-run-all -p lint:fix prod",
     "test": "jest",
     "test:watch": "jest --watch --colors",
     "test:coverage": "jest -coverage --colors",
@@ -15,10 +15,13 @@
     "prod": "webpack --env production",
     "lint": "tsc && eslint ./src/**/*.{ts,tsx}",
     "lint:fix": "tsc --noEmit && eslint ./src/**/*.{ts,tsx} --fix",
-    "lint:watch": "tsc --watch",
+    "lint:watch": "tsc --watch --pretty",
+    "eslint:watch": "esw ./src/ -w --clear --changed",
     "format": "prettier --write \"./src/**/*.+(js|jsx|ts|tsx|json|yml|yaml|css|md)\"",
+    "format:watch": "onchange '**/*.js' -- prettier --write {{changed}}",
     "analyze": "webpack-bundle-analyzer --port 4200 public/stats.json",
-    "remove-public": "rimraf ./public"
+    "remove:coverage": "rimraf ./coverage",
+    "remove:public": "rimraf ./public"
   },
   "repository": {
     "type": "git",
@@ -36,6 +39,7 @@
   "dependencies": {
     "@types/styled-components": "^5.0.1",
     "babel-jest": "^25.2.0",
+    "focus-visible": "^5.0.2",
     "polished": "^3.5.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -71,6 +75,7 @@
     "eslint-config-prettier": "^6.10.1",
     "eslint-loader": "^3.0.3",
     "eslint-plugin-autofix": "^1.0.0",
+    "eslint-plugin-es5": "^1.5.0",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.2",
@@ -78,15 +83,19 @@
     "eslint-plugin-react-hooks": "^2.5.1",
     "eslint-watch": "^6.0.1",
     "file-loader": "^6.0.0",
-    "fork-ts-checker-webpack-plugin": "^4.1.1",
+    "fork-ts-checker-notifier-webpack-plugin": "^2.0.0",
+    "fork-ts-checker-webpack-plugin": "^4.1.2",
     "html-loader": "^1.0.0",
     "html-webpack-plugin": "^4.0.1",
+    "husky": "^4.2.3",
     "image-webpack-loader": "^6.0.0",
     "jest": "^25.2.0",
     "jest-environment-enzyme": "^7.1.2",
     "jest-styled-components": "^7.0.0",
     "npm-run-all": "^4.1.5",
+    "onchange": "^6.1.0",
     "prettier": "^2.0.2",
+    "pretty-quick": "^2.0.1",
     "rimraf": "^3.0.2",
     "source-map-loader": "^0.2.4",
     "svg-url-loader": "^5.0.0",
@@ -100,5 +109,10 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3",
     "webpack-merge": "^4.2.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }

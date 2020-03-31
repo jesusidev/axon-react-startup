@@ -1,7 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Button from './components/button/button';
-import helloString from './components/hello';
+import Button from './components/button/Button';
+import helloString from './helpers/hello';
 
 const App: React.FC = () => {
   const [name, setName] = React.useState<string | null>('');
@@ -29,4 +28,5 @@ const App: React.FC = () => {
     </div>
   );
 };
-ReactDOM.render(<App />, document.getElementById('root'));
+
+export default App;
