@@ -45,7 +45,7 @@ a:hover {
   font-weight: bold;
 }
 .space-top1 {
-  padding: 10px 0 0 0;
+  padding: 10px 0 0;
 }
 .pad2y {
   padding: 20px 0;
@@ -118,7 +118,7 @@ div.path a:visited {
 }
 table.coverage {
   border-collapse: collapse;
-  margin: 10px 0 0 0;
+  margin: 10px 0 0;
   padding: 0;
 }
 
