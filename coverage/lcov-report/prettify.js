@@ -1,42 +1,42 @@
 /* eslint-disable */
 window.PR_SHOULD_USE_CONTINUATION = true;
-(function() {
+(function () {
   var h = ['break,continue,do,else,for,if,return,while'];
   var u = [
     h,
-    'auto,case,char,const,default,double,enum,extern,float,goto,int,long,register,short,signed,sizeof,static,struct,switch,typedef,union,unsigned,void,volatile'
+    'auto,case,char,const,default,double,enum,extern,float,goto,int,long,register,short,signed,sizeof,static,struct,switch,typedef,union,unsigned,void,volatile',
   ];
   var p = [
     u,
-    'catch,class,delete,false,import,new,operator,private,protected,public,this,throw,true,try,typeof'
+    'catch,class,delete,false,import,new,operator,private,protected,public,this,throw,true,try,typeof',
   ];
   var l = [
     p,
-    'alignof,align_union,asm,axiom,bool,concept,concept_map,const_cast,constexpr,decltype,dynamic_cast,explicit,export,friend,inline,late_check,mutable,namespace,nullptr,reinterpret_cast,static_assert,static_cast,template,typeid,typename,using,virtual,where'
+    'alignof,align_union,asm,axiom,bool,concept,concept_map,const_cast,constexpr,decltype,dynamic_cast,explicit,export,friend,inline,late_check,mutable,namespace,nullptr,reinterpret_cast,static_assert,static_cast,template,typeid,typename,using,virtual,where',
   ];
   var x = [
     p,
-    'abstract,boolean,byte,extends,final,finally,implements,import,instanceof,null,native,package,strictfp,super,synchronized,throws,transient'
+    'abstract,boolean,byte,extends,final,finally,implements,import,instanceof,null,native,package,strictfp,super,synchronized,throws,transient',
   ];
   var R = [
     x,
-    'as,base,by,checked,decimal,delegate,descending,dynamic,event,fixed,foreach,from,group,implicit,in,interface,internal,into,is,lock,object,out,override,orderby,params,partial,readonly,ref,sbyte,sealed,stackalloc,string,select,uint,ulong,unchecked,unsafe,ushort,var'
+    'as,base,by,checked,decimal,delegate,descending,dynamic,event,fixed,foreach,from,group,implicit,in,interface,internal,into,is,lock,object,out,override,orderby,params,partial,readonly,ref,sbyte,sealed,stackalloc,string,select,uint,ulong,unchecked,unsafe,ushort,var',
   ];
   var r =
     'all,and,by,catch,class,else,extends,false,finally,for,if,in,is,isnt,loop,new,no,not,null,of,off,on,or,return,super,then,true,try,unless,until,when,while,yes';
   var w = [
     p,
-    'debugger,eval,export,function,get,null,set,undefined,var,with,Infinity,NaN'
+    'debugger,eval,export,function,get,null,set,undefined,var,with,Infinity,NaN',
   ];
   var s =
     'caller,delete,die,do,dump,elsif,eval,exit,foreach,for,goto,if,import,last,local,my,next,no,our,print,package,redo,require,sub,undef,unless,until,use,wantarray,while,BEGIN,END';
   var I = [
     h,
-    'and,as,assert,class,def,del,elif,except,exec,finally,from,global,import,in,is,lambda,nonlocal,not,or,pass,print,raise,try,with,yield,False,True,None'
+    'and,as,assert,class,def,del,elif,except,exec,finally,from,global,import,in,is,lambda,nonlocal,not,or,pass,print,raise,try,with,yield,False,True,None',
   ];
   var f = [
     h,
-    'alias,and,begin,case,class,def,defined,elsif,end,ensure,false,in,module,next,nil,not,or,redo,rescue,retry,self,super,then,true,undef,unless,until,when,yield,BEGIN,END'
+    'alias,and,begin,case,class,def,defined,elsif,end,ensure,false,in,module,next,nil,not,or,redo,rescue,retry,self,super,then,true,undef,unless,until,when,yield,BEGIN,END',
   ];
   var H = [h, 'case,done,elif,esac,eval,fi,function,in,local,set,then,until'];
   var A = [l, R, w, s + I, f, H];
@@ -144,7 +144,7 @@ window.PR_SHOULD_USE_CONTINUATION = true;
           }
         }
       }
-      af.sort(function(av, au) {
+      af.sort(function (av, au) {
         return av[0] - au[0] || au[1] - av[1];
       });
       var ai = [];
@@ -231,7 +231,7 @@ window.PR_SHOULD_USE_CONTINUATION = true;
             aj[ak] = X(ag);
           } else {
             if (ai !== '\\') {
-              aj[ak] = ag.replace(/[a-zA-Z]/g, function(ao) {
+              aj[ak] = ag.replace(/[a-zA-Z]/g, function (ao) {
                 var ap = ao.charCodeAt(0);
                 return '[' + String.fromCharCode(ap & ~32, ap | 32) + ']';
               });
@@ -324,7 +324,7 @@ window.PR_SHOULD_USE_CONTINUATION = true;
   function g(U, T) {
     var S = {};
     var V;
-    (function() {
+    (function () {
       var ad = U.concat(T);
       var ah = [];
       var ag = {};
@@ -347,7 +347,7 @@ window.PR_SHOULD_USE_CONTINUATION = true;
       V = k(ah);
     })();
     var X = T.length;
-    var W = function(ah) {
+    var W = function (ah) {
       var Z = ah.sourceCode,
         Y = ah.basePos;
       var ad = [Y, F];
@@ -418,7 +418,7 @@ window.PR_SHOULD_USE_CONTINUATION = true;
         C,
         /^(?:\'\'\'(?:[^\'\\]|\\[\s\S]|\'{1,2}(?=[^\']))*(?:\'\'\'|$)|\"\"\"(?:[^\"\\]|\\[\s\S]|\"{1,2}(?=[^\"]))*(?:\"\"\"|$)|\'(?:[^\\\']|\\[\s\S])*(?:\'|$)|\"(?:[^\\\"]|\\[\s\S])*(?:\"|$))/,
         null,
-        '\'"'
+        '\'"',
       ]);
     } else {
       if (T.multiLineStrings) {
@@ -426,14 +426,14 @@ window.PR_SHOULD_USE_CONTINUATION = true;
           C,
           /^(?:\'(?:[^\\\']|\\[\s\S])*(?:\'|$)|\"(?:[^\\\"]|\\[\s\S])*(?:\"|$)|\`(?:[^\\\`]|\\[\s\S])*(?:\`|$))/,
           null,
-          '\'"`'
+          '\'"`',
         ]);
       } else {
         W.push([
           C,
           /^(?:\'(?:[^\\\'\r\n]|\\.)*(?:\'|$)|\"(?:[^\\\"\r\n]|\\.)*(?:\"|$))/,
           null,
-          '"\''
+          '"\'',
         ]);
       }
     }
@@ -450,13 +450,13 @@ window.PR_SHOULD_USE_CONTINUATION = true;
             j,
             /^#(?:(?:define|elif|else|endif|error|ifdef|include|ifndef|line|pragma|undef|warning)\b|[^\r\n]*)/,
             null,
-            '#'
+            '#',
           ]);
         }
         S.push([
           C,
           /^<(?:(?:(?:\.\.\/)*|\/?)(?:[\w-]+(?:\/[\w-]+)+)?[\w-]+\.h|[a-z]\w*)>/,
-          null
+          null,
         ]);
       } else {
         W.push([j, /^#[^\r\n]*/, null, '#']);
@@ -480,7 +480,7 @@ window.PR_SHOULD_USE_CONTINUATION = true;
       S.push([
         z,
         new RegExp('^(?:' + U.replace(/[\s,]+/g, '|') + ')\\b'),
-        null
+        null,
       ]);
     }
     W.push([F, /^\s+/, null, ' \r\n\t\xA0']);
@@ -495,7 +495,7 @@ window.PR_SHOULD_USE_CONTINUATION = true;
           'i'
         ),
         null,
-        '0123456789'
+        '0123456789',
       ],
       [F, /^\\[\s\S]?/, null],
       [L, /^.[^\s\w\.$@\'\"\`\/\#\\]*/, null]
@@ -507,7 +507,7 @@ window.PR_SHOULD_USE_CONTINUATION = true;
     hashComments: true,
     cStyleComments: true,
     multiLineStrings: true,
-    regexLiterals: true
+    regexLiterals: true,
   });
   function Q(V, ag) {
     var U = /(?:^|\s)nocode(?:\s|$)/;
@@ -716,7 +716,7 @@ window.PR_SHOULD_USE_CONTINUATION = true;
         ['lang-', /^<xmp\b[^>]*>([\s\S]+?)<\/xmp\b[^>]*>/i],
         ['lang-js', /^<script\b[^>]*>([\s\S]*?)(<\/script\b[^>]*>)/i],
         ['lang-css', /^<style\b[^>]*>([\s\S]*?)(<\/style\b[^>]*>)/i],
-        ['lang-in.tag', /^(<\/?[a-z][^<>]*>)/i]
+        ['lang-in.tag', /^(<\/?[a-z][^<>]*>)/i],
       ]
     ),
     ['default-markup', 'htm', 'html', 'mxml', 'xhtml', 'xml', 'xsl']
@@ -725,7 +725,7 @@ window.PR_SHOULD_USE_CONTINUATION = true;
     g(
       [
         [F, /^[\s]+/, null, ' \t\r\n'],
-        [n, /^(?:\"[^\"]*\"?|\'[^\']*\'?)/, null, '"\'']
+        [n, /^(?:\"[^\"]*\"?|\'[^\']*\'?)/, null, '"\''],
       ],
       [
         [m, /^^<\/?[a-z](?:[\w.:-]*\w)?|\/?>$/i],
@@ -737,7 +737,7 @@ window.PR_SHOULD_USE_CONTINUATION = true;
         ['lang-js', /^on\w+\s*=\s*([^\"\'>\s]+)/i],
         ['lang-css', /^style\s*=\s*\"([^\"]+)\"/i],
         ['lang-css', /^style\s*=\s*\'([^\']+)\'/i],
-        ['lang-css', /^style\s*=\s*([^\"\'>\s]+)/i]
+        ['lang-css', /^style\s*=\s*([^\"\'>\s]+)/i],
       ]
     ),
     ['in.tag']
@@ -749,7 +749,7 @@ window.PR_SHOULD_USE_CONTINUATION = true;
     'cpp',
     'cxx',
     'cyc',
-    'm'
+    'm',
   ]);
   c(i({ keywords: 'null,true,false' }), ['json']);
   c(
@@ -758,7 +758,7 @@ window.PR_SHOULD_USE_CONTINUATION = true;
       hashComments: true,
       cStyleComments: true,
       verbatimStrings: true,
-      types: e
+      types: e,
     }),
     ['cs']
   );
@@ -766,14 +766,14 @@ window.PR_SHOULD_USE_CONTINUATION = true;
   c(i({ keywords: H, hashComments: true, multiLineStrings: true }), [
     'bsh',
     'csh',
-    'sh'
+    'sh',
   ]);
   c(
     i({
       keywords: I,
       hashComments: true,
       multiLineStrings: true,
-      tripleQuotedStrings: true
+      tripleQuotedStrings: true,
     }),
     ['cv', 'py']
   );
@@ -782,7 +782,7 @@ window.PR_SHOULD_USE_CONTINUATION = true;
       keywords: s,
       hashComments: true,
       multiLineStrings: true,
-      regexLiterals: true
+      regexLiterals: true,
     }),
     ['perl', 'pl', 'pm']
   );
@@ -791,7 +791,7 @@ window.PR_SHOULD_USE_CONTINUATION = true;
       keywords: f,
       hashComments: true,
       multiLineStrings: true,
-      regexLiterals: true
+      regexLiterals: true,
     }),
     ['rb']
   );
@@ -803,7 +803,7 @@ window.PR_SHOULD_USE_CONTINUATION = true;
       cStyleComments: true,
       multilineStrings: true,
       tripleQuotedStrings: true,
-      regexLiterals: true
+      regexLiterals: true,
     }),
     ['coffee']
   );
@@ -849,9 +849,9 @@ window.PR_SHOULD_USE_CONTINUATION = true;
     var W = Date;
     if (!W.now) {
       W = {
-        now: function() {
+        now: function () {
           return +new Date();
-        }
+        },
       };
     }
     var X = 0;
@@ -924,7 +924,7 @@ window.PR_SHOULD_USE_CONTINUATION = true;
     PR_SOURCE: J,
     PR_STRING: C,
     PR_TAG: m,
-    PR_TYPE: O
+    PR_TYPE: O,
   };
 })();
 PR.registerLangHandler(
@@ -939,7 +939,7 @@ PR.registerLangHandler(
       ['lang-', /^<xmp\b[^>]*>([\s\S]+?)<\/xmp\b[^>]*>/i],
       [
         'lang-handlebars',
-        /^<script\b[^>]*type\s*=\s*['"]?text\/x-handlebars-template['"]?\b[^>]*>([\s\S]*?)(<\/script\b[^>]*>)/i
+        /^<script\b[^>]*type\s*=\s*['"]?text\/x-handlebars-template['"]?\b[^>]*>([\s\S]*?)(<\/script\b[^>]*>)/i,
       ],
       ['lang-js', /^<script\b[^>]*>([\s\S]*?)(<\/script\b[^>]*>)/i],
       ['lang-css', /^<style\b[^>]*>([\s\S]*?)(<\/style\b[^>]*>)/i],
@@ -947,7 +947,7 @@ PR.registerLangHandler(
       [PR.PR_DECLARATION, /^{{[#^>/]?\s*[\w.][^}]*}}/],
       [PR.PR_DECLARATION, /^{{&?\s*[\w.][^}]*}}/],
       [PR.PR_DECLARATION, /^{{{>?\s*[\w.][^}]*}}}/],
-      [PR.PR_COMMENT, /^{{![^}]*}}/]
+      [PR.PR_COMMENT, /^{{![^}]*}}/],
     ]
   ),
   ['handlebars', 'hbs']
@@ -959,22 +959,22 @@ PR.registerLangHandler(
       [
         PR.PR_STRING,
         /^\"(?:[^\n\r\f\\\"]|\\(?:\r\n?|\n|\f)|\\[\s\S])*\"/,
-        null
+        null,
       ],
       [
         PR.PR_STRING,
         /^\'(?:[^\n\r\f\\\']|\\(?:\r\n?|\n|\f)|\\[\s\S])*\'/,
-        null
+        null,
       ],
       ['lang-css-str', /^url\(([^\)\"\']*)\)/i],
       [
         PR.PR_KEYWORD,
         /^(?:url|rgb|\!important|@import|@page|@media|@charset|inherit)(?=[^\-\w]|$)/i,
-        null
+        null,
       ],
       [
         'lang-css-kw',
-        /^(-?(?:[_a-z]|(?:\\[0-9a-f]+ ?))(?:[_a-z0-9\-]|\\(?:\\[0-9a-f]+ ?))*)\s*:/i
+        /^(-?(?:[_a-z]|(?:\\[0-9a-f]+ ?))(?:[_a-z0-9\-]|\\(?:\\[0-9a-f]+ ?))*)\s*:/i,
       ],
       [PR.PR_COMMENT, /^\/\*[^*]*\*+(?:[^\/*][^*]*\*+)*\//],
       [PR.PR_COMMENT, /^(?:<!--|-->)/],
@@ -982,9 +982,9 @@ PR.registerLangHandler(
       [PR.PR_LITERAL, /^#(?:[0-9a-f]{3}){1,2}/i],
       [
         PR.PR_PLAIN,
-        /^-?(?:[_a-z]|(?:\\[\da-f]+ ?))(?:[_a-z\d\-]|\\(?:\\[\da-f]+ ?))*/i
+        /^-?(?:[_a-z]|(?:\\[\da-f]+ ?))(?:[_a-z\d\-]|\\(?:\\[\da-f]+ ?))*/i,
       ],
-      [PR.PR_PUNCTUATION, /^[^\s\w\'\"]+/]
+      [PR.PR_PUNCTUATION, /^[^\s\w\'\"]+/],
     ]
   ),
   ['css']
@@ -995,8 +995,8 @@ PR.registerLangHandler(
     [
       [
         PR.PR_KEYWORD,
-        /^-?(?:[_a-z]|(?:\\[\da-f]+ ?))(?:[_a-z\d\-]|\\(?:\\[\da-f]+ ?))*/i
-      ]
+        /^-?(?:[_a-z]|(?:\\[\da-f]+ ?))(?:[_a-z\d\-]|\\(?:\\[\da-f]+ ?))*/i,
+      ],
     ]
   ),
   ['css-kw']

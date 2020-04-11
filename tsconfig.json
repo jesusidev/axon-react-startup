@@ -3,6 +3,7 @@
     "noEmit": true, // Do not emit output (meaning do not compile code, only perform type checking)
     "sourceMap": true, //Generates corresponding .map file.
     "noImplicitAny": true, //Raise error on expressions and declarations with an implied any type.
+    "noImplicitReturns": true, //Report error when not all code paths in function return a value.
     "module": "commonjs", // Specify module code generation
     "target": "es6", // Specify ECMAScript target version
     "jsx": "react", // Support JSX in .tsx files
@@ -21,10 +22,6 @@
     "experimentalDecorators": true, // Enables experimental support for ES decorators
     "noFallthroughCasesInSwitch": true // Report errors for fallthrough cases in switch statement
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx"
-  ],
+  "include": ["./src/**/*"],
   "exclude": ["./node_modules", "./build"] // *** The files to not type check ***
 }
-

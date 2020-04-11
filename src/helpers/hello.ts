@@ -1,5 +1,7 @@
+import { greeting } from '../utils';
+
 const helloString = (name: string | null): string => {
-  return `Hello my name is ${name}`;
+  return `${greeting()} ${name}`;
 };
 
 export default helloString;

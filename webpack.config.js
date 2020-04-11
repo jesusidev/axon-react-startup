@@ -4,7 +4,7 @@ const chalkProcessing = chalk.green.bold;
 
 module.exports = (env) => {
   switch (env) {
-    case 'prod':
+    case 'production':
       console.log(chalkProcessing('=================================='));
       console.log(chalkProcessing('=  Axon Bridge Production Build  ='));
       console.log(chalkProcessing('==================================\n'));
@@ -24,7 +24,7 @@ module.exports = (env) => {
       return require('./config/webpack.staging');
       break;
 
-    case 'dev':
+    case 'development':
     default:
       console.log(chalkProcessing('==================================='));
       console.log(chalkProcessing('=  Axon Bridge Development Build  ='));
