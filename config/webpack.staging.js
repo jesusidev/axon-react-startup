@@ -15,13 +15,13 @@ module.exports = merge(commonConfig, {
 
   output: {
     path: path.resolve(__dirname, '../public/'),
-    filename: '[name].[chunkhash:4].js'
+    filename: '[name].[chunkhash:4].js',
   },
 
   plugins: [
     new Dotenv({
       path: path.join(__dirname, '../.env.prod'),
-      systemvars: true
+      systemvars: true,
     }),
     new CleanWebpackPlugin(),
     new webpack.HashedModuleIdsPlugin(),
@@ -29,11 +29,11 @@ module.exports = merge(commonConfig, {
       analyzerMode: 'disabled',
       generateStatsFile: true,
       statsOptions: {
-        source: false
-      }
+        source: false,
+      },
     }),
     new HtmlWebPackPlugin({
-      template: '../src/index.html',
+      template: './src/index.html',
       minify: {
         removeComments: true,
         collapseWhitespace: false,
@@ -43,10 +43,10 @@ module.exports = merge(commonConfig, {
         removeStyleLinkTypeAttributes: true,
         keepClosingSlash: true,
         minifyJS: true,
-        minifyCSS: true
+        minifyCSS: true,
       },
-      inject: 'body'
-    })
+      inject: 'body',
+    }),
   ],
 
   module: {
@@ -58,12 +58,10 @@ module.exports = merge(commonConfig, {
             loader: 'html-loader',
             options: {
               minimize: false,
-              removeComment: true,
-              collapseWhitespace: false
-            }
-          }
-        ]
-      }
-    ]
-  }
+            },
+          },
+        ],
+      },
+    ],
+  },
 });

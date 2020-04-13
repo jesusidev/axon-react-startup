@@ -32,7 +32,7 @@ var jumpToCode = (function init() {
     missingCoverageElements.item(index).scrollIntoView({
       behavior: 'smooth',
       block: 'center',
-      inline: 'center'
+      inline: 'center',
     });
   }
 
