@@ -13,7 +13,8 @@
     "ecmaVersion": 2020,
     "sourceType": "module",
     "project": "./tsconfig.json",
-    "tsconfigRootDir": "./"
+    "tsconfigRootDir": "./",
+    "extraFileExtensions": [".html"]
   },
   "plugins": [
     "@typescript-eslint",
