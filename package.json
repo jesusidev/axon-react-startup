@@ -21,7 +21,9 @@
     "format:watch": "onchange '**/*.js' -- prettier --write {{changed}}",
     "analyze": "webpack-bundle-analyzer --port 4200 public/stats.json",
     "remove:coverage": "rimraf ./coverage",
-    "remove:public": "rimraf ./public"
+    "remove:public": "rimraf ./public",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -43,7 +45,8 @@
     "polished": "^3.5.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "styled-components": "^5.1.0"
+    "styled-components": "^5.1.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@architect/sandbox": "^1.9.2",
@@ -109,5 +112,6 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3",
     "webpack-merge": "^4.2.2"
-  }
+  },
+  "snyk": true
 }
