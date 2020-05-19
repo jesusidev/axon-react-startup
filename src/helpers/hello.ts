@@ -1,6 +1,6 @@
 import { greeting } from '../utils';
 
-const helloString = (name: string | null): string => {
+const helloString = (name: string): string => {
   return `${greeting()} ${name}`;
 };
 
