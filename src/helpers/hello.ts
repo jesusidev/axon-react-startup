@@ -1,7 +1,10 @@
 import { greeting } from '../utils';
 
 const helloString = (name: string): string => {
-  return `${greeting()} ${name}`;
+  if (name) {
+    return `${greeting()} ${name}`;
+  }
+  throw new Error('Name parameter can not be left blank');
 };
 
 export default helloString;
