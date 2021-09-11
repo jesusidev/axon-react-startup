@@ -17,6 +17,7 @@ const App: React.FC = () => {
   return (
     <div className="wrapper">
       <h1>{helloString(name)}</h1>
+            <h2>TESt</h2>
       <input
         type="text"
         placeholder="Enter your name"
