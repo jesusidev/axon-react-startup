@@ -1,10 +1,10 @@
-import React from 'react';
 import Button from './components/button/Button';
 import helloString from './helpers/hello';
+import { FC, useState } from 'react';
 
-const App: React.FC = () => {
-  const [name, setName] = React.useState<string | null>('');
-  const [isLoading, setIsLoading] = React.useState(false);
+const App: FC = () => {
+  const [name, setName] = useState<string | null>('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const onButtonClick = (): void => {
     setIsLoading(true);
