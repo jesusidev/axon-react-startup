@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import { darken, lighten } from 'polished';
+import styled from 'styled-components';
 
 const ButtonBase = styled.button`
   font-family: 'Raleway', sans-serif;
