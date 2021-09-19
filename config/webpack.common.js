@@ -1,8 +1,10 @@
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const ForkTsCheckerNotifierWebpackPlugin = require('fork-ts-checker-notifier-webpack-plugin');
+const path = require('path');
 const createStyledComponentsTransformer = require('typescript-plugin-styled-components')
   .default;
 const styledComponentsTransformer = createStyledComponentsTransformer();
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -11,6 +13,28 @@ module.exports = {
 
   resolve: {
     extensions: ['*', '.js', '.jsx', '.ts', '.tsx', '.json'],
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+      '@assets': path.resolve(__dirname, './src/assets'),
+      '@components': path.resolve(__dirname, './src/components'),
+      '@layout': path.resolve(__dirname, './src/components/layout'),
+      '@hooks': path.resolve(__dirname, './src/hooks'),
+      '@routes': path.resolve(__dirname, './src/routes'),
+      '@services': path.resolve(__dirname, './src/services'),
+      '@store': path.resolve(__dirname, './src/store'),
+      '@contexts': path.resolve(__dirname, './src/store/contexts'),
+      '@utils': path.resolve(__dirname, './src/utils'),
+      '@views': path.resolve(__dirname, './src/views')
+    },
+    plugins: [
+      new TsconfigPathsPlugin({
+        configFile: "./tsconfig.json",
+        logLevel: "info",
+        extensions: [".ts", ".tsx"],
+        mainFields: ["browser", "main"],
+        baseUrl: "./src"
+      })
+    ]
   },
 
   plugins: [
@@ -19,7 +43,7 @@ module.exports = {
         files: './src/**/*.{ts,tsx,js,jsx}' // required - same as command `eslint ./src/**/*.{ts,tsx,js,jsx} --ext .ts,.tsx,.js,.jsx`
       }
     }),
-    new ForkTsCheckerNotifierWebpackPlugin({ skipSuccessful: true }),
+    new ForkTsCheckerNotifierWebpackPlugin({ skipSuccessful: true })
   ],
 
   module: {

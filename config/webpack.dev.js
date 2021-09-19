@@ -21,6 +21,18 @@ module.exports = merge(commonConfig, {
       chunks: 'all',
     },
   },
+  // TODO: Figure Out Why devServer is causing build issues
+  // devServer: {
+  //   port: 8080,
+  //   client: {
+  //     overlay: true,
+  //   },
+  //   compress: true,
+  //   open: true,
+  //   hot: true,
+  //   historyApiFallback: true
+  // },
+
   plugins: [
     new ErrorOverlayPlugin(),
     new Dotenv({
