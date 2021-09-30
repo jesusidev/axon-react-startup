@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
 import { NavBar } from './components/layout/navigation/NavBar';
-const App: FC = () => {
 
+const App: FC = () => {
   return (
     <NavBar />
   );

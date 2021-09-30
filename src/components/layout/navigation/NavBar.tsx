@@ -6,9 +6,6 @@ import ContactPage from '../../../views/Contact/ContactPage';
 import HomePage from '../../../views/Home/HomePage';
 import ServicesPage from '../../../views/Services/ServicesPage';
 
-
-
-
 export function NavBar() {
   return (
     <Router>
