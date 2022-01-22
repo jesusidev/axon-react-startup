@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
-
 import AboutPage from '../../../views/About/AboutPage';
 import CareersPage from '../../../views/Careers/CareersPage';
 import ContactPage from '../../../views/Contact/ContactPage';
