@@ -49,7 +49,7 @@
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.3.0",
     "snyk": "^1.813.0",
-    "styled-components": "^5.3.1"
+    "styled-components": "^5.3.11"
   },
   "devDependencies": {
     "@architect/sandbox": "^4.0.2",
