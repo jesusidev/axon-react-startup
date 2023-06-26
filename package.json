@@ -40,7 +40,7 @@
   },
   "homepage": "https://github.com/gdevtech/axon-react-startup#readme",
   "dependencies": {
-    "@types/styled-components": "^5.1.14",
+    "@types/styled-components": "^5.1.26",
     "babel-jest": "^27.2.0",
     "focus-visible": "^5.2.0",
     "module-alias": "^2.2.2",
